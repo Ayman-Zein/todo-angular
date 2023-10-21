@@ -1,0 +1,107 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  @include breakpoint(md) {
+    flex-direction: row;
+    @include rtl(flex-direction, row, row-reverse);
+  }
+  justify-content: space-between;
+  padding-right: 1.5rem;
+
+  &__main-title-box {
+    flex: 1;
+    @include breakpoint(md) {
+      flex: 0 0 65%;
+    }
+    position: relative;
+
+    &__decorator {
+      -webkit-clip-path: polygon(0 0%, 100% 0, 70% 100%, 0% 100%);
+      clip-path: polygon(0 0%, 100% 0, 70% 100%, 0% 100%);
+      background-color: $color-primary;
+      height: 140px;
+    }
+    &__qr {
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      left: 10%;
+      top: 4rem;
+      z-index: 2;
+      @include breakpoint(md) {
+        width: 120px;
+        height: 120px;
+        top: 3rem;
+        left: 15%;
+      }
+    }
+    &__content {
+      &-container {
+        -webkit-clip-path: polygon(0 0%, 100% 0, 95% 100%, 0% 100%);
+        clip-path: polygon(0 0%, 100% 0, 95% 100%, 0% 100%);
+        height: 80px;
+        background-color: $color-secondary;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 1.875rem;
+      }
+
+      &-head {
+        color: $color-white;
+        font-size: 1.5rem;
+        text-align: right;
+        margin-right: 1.5rem;
+        @include breakpoint(md) {
+          margin-right: 5rem;
+        }
+        &--en {
+          display: block;
+          font-size: 0.9rem;
+          font-weight: 600;
+          text-transform: capitalize;
+          letter-spacing: 0.1px;
+        }
+      }
+    }
+  }
+  &__title-box {
+    flex: 1;
+    @include breakpoint(xl) {
+      flex: 0 0 35%;
+    }
+    -webkit-clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: $color-white;
+    height: 80px;
+    margin-top: 1.875rem;
+    display: flex;
+    align-items: center;
+    @include rtl(justify-content, end, start);
+    &__title {
+      color: $color-primary;
+      margin-right: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      padding: 1rem 0;
+      @include rtl(flex-direction, row, row-reverse);
+      @include breakpoint(md) {
+        padding: 0;
+      }
+      &-icon {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-secondary;
+        border-radius: 5px;
+        margin-left: 0.5rem;
+        svg path {
+          fill: $color-white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.card {
+  background-color: $color-white;
+  padding: 1rem 2rem;
+  margin: 2rem 1rem;
+
+  position: relative;
+  @include breakpoint(md) {
+    margin: 3rem auto;
+    max-width: 375px;
+  }
+  -webkit-box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 10px #fff;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    &-date {
+      display: flex;
+      align-items: center;
+      &-day {
+        font-size: 3.5rem;
+        font-weight: 500;
+        color: $color-gray-dark;
+      }
+      &-month {
+        font-weight: 500;
+        font-size: 1rem;
+        color: lighten($color-gray-dark, 10%);
+        text-transform: uppercase;
+      }
+      &-year {
+        font-weight: 400;
+        font-size: 1rem;
+        color: lighten($color-gray-dark, 20%);
+      }
+    }
+    &-day {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 1rem;
+      color: lighten($color-gray-dark, 10%);
+    }
+  }
+  &__list {
+    max-height: 375px;
+    margin-bottom: 2rem;
+    overflow-y: auto;
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      cursor: pointer;
+      &.card__list-item--completed {
+        p {
+          color: lighten($color-gray-dark, 20%);
+          opacity: 0.5;
+        }
+        span {
+          border: 3px solid $color-green;
+          svg path {
+            display: block;
+            fill: $color-green;
+          }
+          &.card__list-item__icon--delete {
+            border: 0;
+            svg path {
+              fill: none;
+            }
+          }
+        }
+      }
+      &__text {
+        color: $color-gray-dark;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 50%;
+        border: 3px solid lighten($color-gray-dark, 50%);
+
+        svg path {
+          display: none;
+        }
+
+        &--delete {
+          border: 0;
+        }
+      }
+    }
+  }
+}

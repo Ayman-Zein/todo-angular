@@ -1,0 +1,37 @@
+/* import our font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import "../abstract/variables";
+@import "../abstract/mixins";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: $font-poppins;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $font-poppins;
+  background-color: $color-bg-gray;
+  @include breakpoint(xl) {
+    height: 100vh;
+  }
+}
+.direction {
+  position: fixed;
+  z-index: 10;
+  left: 1rem;
+  top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 0;
+}

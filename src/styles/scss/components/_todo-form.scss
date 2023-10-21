@@ -1,0 +1,41 @@
+.todo-form {
+  background-color: $color-white;
+  padding: 1rem 2rem;
+  margin: 2rem 1rem;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  @include breakpoint(md) {
+    margin: 1rem auto;
+    max-width: 375px;
+  }
+
+  &__form-control {
+    padding: 0.5rem;
+    border: 1px solid $color-gray;
+    border-radius: 5px;
+    width: 70%;
+  }
+  &__btn {
+    background-color: $color-primary;
+    border: 0;
+    color: $color-white;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: none;
+    outline: none;
+    height: 2rem;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+
+    &:disabled,
+    &[disabled] {
+      opacity: 0.4;
+    }
+  }
+}

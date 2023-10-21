@@ -1,0 +1,69 @@
+@mixin breakpoint($point) {
+  @if $point == sm {
+    //576px
+    @media (min-width: 36em) {
+      @content;
+    }
+  }
+  @if $point == md {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
+  @if $point == lg {
+    //992px
+    @media (min-width: 62em) {
+      @content;
+    }
+  }
+  @if $point == xl {
+    // 1200px
+    @media (min-width: 75em) {
+      @content;
+    }
+  }
+  @if $point == xxl {
+    // 1400px
+    @media (min-width: 87.5em) {
+      @content;
+    }
+  }
+  @if $point == xs {
+    // 1400px
+    @media (max-width: 35.9375em) {
+      @content;
+    }
+  }
+}
+
+@mixin rtl($property, $ltr-value, $rtl-value) {
+  [dir="ltr"] & {
+    #{$property}: $ltr-value;
+  }
+
+  [dir="rtl"] & {
+    #{$property}: $rtl-value;
+  }
+}
+
+// transition
+@mixin transition($x) {
+  transition: $x;
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -ms-transition: $x;
+  -o-transition: $x;
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin border-radius($pixel) {
+  border-radius: $pixel;
+}
